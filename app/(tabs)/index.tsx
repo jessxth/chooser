@@ -1,32 +1,24 @@
-import { Image } from 'expo-image';
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { Dimensions, StyleSheet, Text, View } from 'react-native';
 
-
-import { HelloWave } from '@/components/hello-wave';
-import ParallaxScrollView from '@/components/parallax-scroll-view';
-import { ThemedText } from '@/components/themed-text';
-import { ThemedView } from '@/components/themed-view';
-import { Link } from 'expo-router';
+const { width, height } = Dimensions.get('window');
 
 export default function HomeScreen() {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">wer gibt essen aus ?</ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+    <View style={styles.mainBody}>
+      <Text style={styles.h1}>was geht yallah</Text>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
+  mainBody: {
+    width: width,                  // volle Bildschirmbreite
+    height: height,                // volle Bildschirmhöhe
+    paddingVertical: height * 0.1, // 20% der Bildschirmhöhe
+    paddingHorizontal: width * 0.1, // 10% der Bildschirmbreite
+    backgroundColor: '#2f2f2f',
+  },
   titleContainer: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -36,11 +28,9 @@ const styles = StyleSheet.create({
     gap: 8,
     marginBottom: 8,
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+  h1: {
+    fontSize: 30,
+    fontWeight: '900',
+    color: '#ffffff',
   },
 });
