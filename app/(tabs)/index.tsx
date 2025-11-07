@@ -1,5 +1,6 @@
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
+import Wheel from '@/components/wheel'; // Import hinzufügen - Pfad anpassen falls nötig
 import React from 'react';
 import { Dimensions, StyleSheet } from 'react-native';
 
@@ -9,10 +10,10 @@ export default function HomeScreen() {
   return (
     <ThemedView style={styles.mainBody}>
       <ThemedText type="title" style={styles.h1}>Glücksrad</ThemedText>
-      
+      <Wheel />
       <ThemedText>Optionen hinzufügen und drehen!</ThemedText>
     </ThemedView>
-    )
+  );
 }
 
 const styles = StyleSheet.create({
