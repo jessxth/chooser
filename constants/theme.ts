@@ -10,20 +10,24 @@ const tintColorDark = '#fff';
 
 export const Colors = {
   light: {
-    text: '#11181C',
-    background: '#fff',
-    tint: tintColorLight,
-    icon: '#687076',
-    tabIconDefault: '#687076',
-    tabIconSelected: tintColorLight,
+    background: '#F8F9FA',   // sehr helles Grau als Grundfläche
+    surface: '#FFFFFF',      // Karten, Container
+    text: '#1C1C1C',         // Standard-Text
+    primary: '#4D96FF',      // Blau – Buttons, Akzente
+    secondary: '#FF6B6B',    // Rot – Interaktion, Glücksrad-Segment
+    accent: '#FFD93D',       // Gelb – Highlight, Energie
+    border: '#E0E0E0',       // Trennlinien
+    muted: '#6C757D',        // inaktive Texte
   },
   dark: {
-    text: '#ECEDEE',
-    background: '#151718',
-    tint: tintColorDark,
-    icon: '#9BA1A6',
-    tabIconDefault: '#9BA1A6',
-    tabIconSelected: tintColorDark,
+    background: '#121212',   // tiefes Grau, fast schwarz
+    surface: '#1E1E1E',      // Karten, Container
+    text: '#FFFFFF',         // Standard-Text
+    primary: '#4D96FF',      // Blau bleibt gleich für Wiedererkennung
+    secondary: '#FF6B6B',    // Rot für Kontrast
+    accent: '#FFD93D',       // leuchtendes Gelb
+    border: '#2A2A2A',       // dezente Linien
+    muted: '#9CA3AF',        // abgeschwächte Texte
   },
 };
 
