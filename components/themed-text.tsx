@@ -8,6 +8,8 @@ export type ThemedTextProps = TextProps & {
   lightColor?: string;
   darkColor?: string;
   type?: 'default' | 'title' | 'defaultSemiBold' | 'subtitle' | 'link';
+  adjustsFontSizeToFit?: boolean;
+  maxFontSizeMultiplier?: number;
 };
 
 export function ThemedText({
@@ -15,6 +17,8 @@ export function ThemedText({
   lightColor,
   darkColor,
   type = 'default',
+  adjustsFontSizeToFit = false,
+  maxFontSizeMultiplier = 1.5,
   ...rest
 }: ThemedTextProps) {
   const color = useThemeColor({ light: lightColor, dark: darkColor }, 'text');
@@ -30,6 +34,9 @@ export function ThemedText({
         type === 'link' ? styles.link : undefined,
         style,
       ]}
+      adjustsFontSizeToFit={adjustsFontSizeToFit}
+      numberOfLines={type === 'title' ? 2 : undefined} // Max 2 Zeilen für Titel
+      maxFontSizeMultiplier={maxFontSizeMultiplier}
       {...rest}
     />
   );
@@ -48,13 +55,14 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   title: {
-    fontSize: FontSizes.title,
-    fontFamily: Fonts.momo, // Deine MomoTrustDisplay-Regular Font
-    
+    fontSize: 60, // Maximale Größe
+    fontFamily: Fonts.momo,
+    textAlign: 'center', // Wichtig für gleichmäßige Anpassung
+    includeFontPadding: false, // Präzisere Größenanpassung
   },
   subtitle: {
     fontSize: FontSizes.xlarge,
-    fontFamily: Fonts.momo, // Deine MomoTrustDisplay-Regular Font
+    fontFamily: Fonts.momo,
     fontWeight: 'bold',
   },
   link: {

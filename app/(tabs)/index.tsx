@@ -10,7 +10,7 @@ export default function HomeScreen() {
 
   return (
     <ThemedView style={styles.mainBody}>
-      <ThemedText type="title" style={styles.h1}>Glücksrad</ThemedText>
+      <ThemedText type="title" adjustsFontSizeToFit={true} maxFontSizeMultiplier={1.2}>GLÜCKSRAD</ThemedText>
       <View style={styles.wheelWrapper}>
         <Wheel size={200} />
       </View>
